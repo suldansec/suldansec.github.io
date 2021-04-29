@@ -23,7 +23,7 @@ author: Abdullahi                # change to your full name
 avatar: /assets/img/sample/avatar.jpeg   # support internet resources
 
 github:
-  username: abdulahiisse31             # change to your github username
+  username: 0abdullahi             # change to your github username
 
 twitter:
   username: abdullahieissa            # change to your twitter username
@@ -43,7 +43,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     -       # change to your twitter homepage
-    - https://github.com/abdulahiisse31       # change to your github homepage
+    - https://github.com/0abdullahi       # change to your github homepage
     # Uncomment below to add more social links
     - 
     - https://www.linkedin.com/in/abdullahi-ahmed1
