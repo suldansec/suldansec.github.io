@@ -4,7 +4,7 @@ image: /images/9794.jpg
 categories: [Blogging, Tutorial]
 tags: [getting started]
 pin: true
-excert: "This is the excert of the post"
+show: "This is the excert of the post"
 ---
 
 # this is a test post
