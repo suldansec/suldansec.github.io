@@ -1,7 +1,7 @@
 ---
 title: DirpNSTink 1 - Vulnhub
 image: /assets/img/vuln-dirpnstink/dirpnstink-logo.png
-date: 2021-05-01 05:44:00 +1750
+date: 2021-05-01 05:44:00 -1750
 categories: [Vulhub]
 tags: [linux, wordpress]
 show: "Derpnstink 1 was a straight forward machine with some rabbitholes around the machine. It consisted finding hidden wordpress blog with outdated plugin that allows malicious file upload to obtain remote code execution. After obtaining foothold, there is a pcap traffic capture that contains user password. After switching to the user, the user is allowed to run binaries at a specific directory with sudo privilege."
