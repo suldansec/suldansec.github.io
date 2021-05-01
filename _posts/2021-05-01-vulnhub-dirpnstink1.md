@@ -70,7 +70,7 @@ From the above nmap scan output, we have multiple information about the machine 
 ## FTP Service
 
 I tried to login to ftp using anonymous login but unsuccessful. There was no exploit for the ftp version installed as shown below
-![[/assets/img/vuln-dirpnstink/20210430221504.png]]
+![](/assets/img/vuln-dirpnstink/20210430221504.png)
 
 ## Webserver
 
