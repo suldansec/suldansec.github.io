@@ -127,7 +127,7 @@ On the top of the wordpress blog, there is a string ```CaniHazURMoneyPlz``` not 
 
 Time for wpscan!
 
-### Wordpress
+## Wordpress
 
 wpscan revealed  admin user.
 
@@ -242,7 +242,7 @@ In order to crack the hashes with hashcat, the mode for phpass is 400
 
 ![](/assets/img/vuln-dirpnstink/20210501125838.png)
 
-Hashcat was taking awhile so i switched over to john.
+Hashcat was taking awhile, so i switched over to john.
 
 ```bash
 ┌──(root💀kali)-[~/vuln/derpnstink]
@@ -285,7 +285,7 @@ The footer of the html suggested it was cups running on port 631.
 
 ![](/assets/img/vuln-dirpnstink/20210501132218.png)
 
-Since the cracked password didnt led to anywhere it might be the CUPS admin passwords. Therefore, I set up port forwarding using [chisel](https://github.com/jpillora/chisel)
+Since the cracked password didnt led to anywhere it might be the CUPS admin passwords. Therefore, I set up port forwarding using [chisel](https://github.com/jpillora/chisel).
 Unfortunately chisel failed to run on the victim machine.
 
 After snooping around the machine for awhile, I realized I skipped critical step after cracking the hashes to try to ```su -``` into the accounts rather than only trying to ssh.
@@ -369,7 +369,7 @@ User mrderp may run the following commands on DeRPnStiNK:
     (ALL) /home/mrderp/binaries/derpy*
 ```
 
-The directory /```home/mrderp/binaries ``` did not exist so i created one. The i created file ```derpycmd``` which executes bash. The filename has to start with ```derpy*``` since that is what the user is allowed to run sudo with.
+The directory /```home/mrderp/binaries ``` did not exist so i created one. Then I created file ```derpycmd``` which executes bash. The filename has to start with ```derpy*``` since that is what the user is allowed to run sudo with.
 
 ```bash
 mrderp@DeRPnStiNK:~/binaries$ pwd
