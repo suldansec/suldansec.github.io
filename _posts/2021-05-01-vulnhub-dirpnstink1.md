@@ -76,23 +76,23 @@ I tried to login to ftp using anonymous login but unsuccessful. There was no exp
 
 The default page was static website.
 
-![[/assets/img/vuln-dirpnstink/20210430221908.png]]
+![](/assets/img/vuln-dirpnstink/20210430221908.png)
 
 Looking at the source code of the static website, there is webnotes directory with a filename info.txt
 
-![[/assets/img/vuln-dirpnstink/20210430222024.png]]
+![](/assets/img/vuln-dirpnstink/20210430222024.png)
 
 The content of the info.txt was as shown below.
 
-![[/assets/img/vuln-dirpnstink/20210430222243.png]]
+![](/assets/img/vuln-dirpnstink/20210430222243.png)
 
 This suggests there might be virtual host routing in play.
 
-![[/assets/img/vuln-dirpnstink/20210430222452.png]]
+![](/assets/img/vuln-dirpnstink/20210430222452.png)
 
 Going one directory up to ```/webnotes```, reveals output of commands run in the server.
 
-![[/assets/img/vuln-dirpnstink/20210430222748.png]]
+![](/assets/img/vuln-dirpnstink/20210430222748.png)
 
 We get two information, username ```stink``` and hostname ```derpnstink.local```. I added the leaked hostname to kali ```/etc/hosts```
 The hostname was also serving the same static website.
@@ -120,7 +120,7 @@ Run gobuster to discover hidden directories.
 
 The directory ```/weblog``` was hosting wordpress blog.
 
-![[/assets/img/vuln-dirpnstink/20210430224256.png]]
+![](/assets/img/vuln-dirpnstink/20210430224256.png)
 
 On the top of the wordpress blog, there is a string ```CaniHazURMoneyPlz``` not sure if it is a password.
 
@@ -136,10 +136,10 @@ wpscan revealed  admin user.
 ```
 
 As a habit of trying default credentials like admin:admin, I was in with admin:admin.
-![[/assets/img/vuln-dirpnstink/20210430231923.png]]
+![](/assets/img/vuln-dirpnstink/20210430231923.png)
 
 The slide-show plugin installed is outdated as shown by wpscan
-![[/assets/img/vuln-dirpnstink/20210430232459.png]]
+![](/assets/img/vuln-dirpnstink/20210430232459.png)
 
 I uploaded php script that would take parameter from user and execute system commands on it.
 
@@ -157,21 +157,21 @@ if(isset($_REQUEST['cmd'])){
 
 After uploading the php script, I browsed to ``` http://derpnstink.local/weblog/wp-content/uploads/slideshow-gallery/cmd.php``` to execute the php script and verify rce with ```id``` command.
 
-![[/assets/img/vuln-dirpnstink/20210501121154.png]]
+![](/assets/img/vuln-dirpnstink/20210501121154.png)
 
 ## Foothold
 
 There are 2 users in the machine ```stinky, mrderp``` 
 
-![[/assets/img/vuln-dirpnstink/20210501122133.png]]
+![](/assets/img/vuln-dirpnstink/20210501122133.png)
 
 I tried to write ssh key into their ```.ssh/authorized_keys``` but was unsuccessful.
 
-![[/assets/img/vuln-dirpnstink/20210501122835.png]]
+![](/assets/img/vuln-dirpnstink/20210501122835.png)
 
 I set up netcat listener and executed php reverse shell.
 
-![[/assets/img/vuln-dirpnstink/20210501123315.png]]
+![](/assets/img/vuln-dirpnstink/20210501123315.png)
 
 For a proper tty, i executed the following:
 
@@ -239,7 +239,7 @@ mysql> select user_login,user_pass from wp_users;
 The hashes from the MySQL database were type ```phpass``` .
 In order to crack the hashes with hashcat, the mode for phpass is 400
 
-![[/assets/img/vuln-dirpnstink/20210501125838.png]]
+![](/assets/img/vuln-dirpnstink/20210501125838.png)
 
 Hashcat was taking awhile so i switched over to john.
 
@@ -282,7 +282,7 @@ LISTEN      0      128                                                ::1:631   
 I run curl on it and there was a html page rendered
 The footer of the html suggested it was cups running on port 631.
 
-![[/assets/img/vuln-dirpnstink/20210501132218.png]]
+![](/assets/img/vuln-dirpnstink/20210501132218.png)
 
 Since the cracked password didnt led to anywhere it might be the CUPS admin passwords. Therefore, I set up port forwarding using [chisel](https://github.com/jpillora/chisel)
 Unfortunately chisel failed to run on the victim machine.
@@ -334,15 +334,15 @@ stinky@DeRPnStiNK:~/ftp/files$ cp /home/stinky/Documents/derpissues.pcap /var/ww
 
 Downloaded the pcap using firefox
 
-![[/assets/img/vuln-dirpnstink/20210501143030.png]]
+![](/assets/img/vuln-dirpnstink/20210501143030.png)
 
 After opening the pcap file using wireshark, i searched for http requests with POST method since high chances are we are looking for password reset as revealed in the text file converstation.
 
-![[/assets/img/vuln-dirpnstink/20210501143846.png]]
+![](/assets/img/vuln-dirpnstink/20210501143846.png)
 
 After following the http stream, one of the streams contained new admin account creation and the password for the account.
 
-![[/assets/img/vuln-dirpnstink/20210501143724.png]]
+![](/assets/img/vuln-dirpnstink/20210501143724.png)
 
 moment of truth! I tried to login to ```mrderp``` account using ```derpderpderpderpderpderpderp```
 ```bash
@@ -352,7 +352,7 @@ mrderp@DeRPnStiNK:~$
 ```
 and I was in
 
-![[/assets/img/vuln-dirpnstink/20210501144424.png]]
+![](/assets/img/vuln-dirpnstink/20210501144424.png)
 
 ## Root Privesc
 
