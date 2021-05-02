@@ -19,7 +19,7 @@ title: About-Me
 - 💬 Talk to me about current security news, python and soccer
 - 👯 We can connect to play some soccer or workout together
 
-<p style="text-align: center">
+<p>
       <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="python" width="55" height="55"/>
       <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="docker" width="85" height="70"/> 
       <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="GIT" width="55" height="55"/>
