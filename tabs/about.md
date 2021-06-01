@@ -1,6 +1,5 @@
 ---
 layout: page
-title: About-Me
 ---
 
 # Hello there <img src="/assets/img/sample/Hi.gif" width="29px">
