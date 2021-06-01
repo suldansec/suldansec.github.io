@@ -1,5 +1,6 @@
 ---
 layout: page
+Title: 
 ---
 
 # Hello there <img src="/assets/img/sample/Hi.gif" width="29px">
