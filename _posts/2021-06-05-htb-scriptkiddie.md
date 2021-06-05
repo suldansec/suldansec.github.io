@@ -1,6 +1,6 @@
 ---                                                                                                                                  
 title: Hackthebox - ScriptKiddie                                                                                                             
-image: /assets/img/htb-scriptkiddie/htb-scriptkiddie-logo.png                                                                          
+image: /assets/img/htb-scriptkiddie/htb-scriptkiddie-info.png                                                                        
 date: 2021-06-05                                                                                                                      
 categories: [Hackthebox]                                                                                                               
 tags: [linux, metasploit, bash, nmap, apk]     
