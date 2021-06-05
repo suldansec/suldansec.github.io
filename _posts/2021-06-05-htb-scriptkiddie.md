@@ -1,6 +1,6 @@
 ---                                                                                                                                  
 title: Hackthebox - ScriptKiddie                                                                                                             
-image: htb-scriptkiddie/htb-scriptkiddie-logo.png                                                                          
+image: /assets/img/htb-scriptkiddie/htb-scriptkiddie-logo.png                                                                          
 date: 2021-06-05                                                                                                                      
 categories: [Hackthebox]                                                                                                               
 tags: [linux, metasploit, bash, nmap, apk]     
@@ -56,7 +56,7 @@ The webserver is using [msfvenom](https://www.offensive-security.com/metasploit-
 
 Googling ```metasploit template vulnerability``` returns [Metasploit Framework msfvenom APK Template Command Injection](https://www.rapid7.com/db/modules/exploit/unix/fileformat/metasploit_msfvenom_apk_template_cmd_injection/) vulnerability.
 
-![](htb-scriptkiddie/2021-06-04-22-15-12.png)
+![](/assets/img/htb-scriptkiddie/2021-06-04-22-15-12.png)
 
 # Exploitation
 ## Foothold
@@ -92,7 +92,7 @@ The ```msf.apk``` payload was saved in ```/root/.msf4/local/msf.apk``` directory
 
 I started listening on port 9001 on my kali machine and uploaded the ```msf.apk``` file. 
 
-![](htb-scriptkiddie/2021-06-04-22-36-21.png)
+![](/assets/img/htb-scriptkiddie/2021-06-04-22-36-21.png)
 
 # Privilege Escelation
 
@@ -140,7 +140,7 @@ The above line has 3 spaces before ```;```. I used ```echo -n``` option to avoid
 
 Received reverse shell as ```pwn``` user.
 
-![](htb-scriptkiddie/2021-06-04-23-24-36.png)
+![](/assets/img/htb-scriptkiddie/2021-06-04-23-24-36.png)
 
 ## Root Privesc
 The user ```pwn``` can execute ```/opt/metasploit-framework-6.0.9/msfconsole``` with superuser privilege.
