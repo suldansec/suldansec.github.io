@@ -8,25 +8,25 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Abdullahi                          # the main title
+title: Abdiaziz Maalim                          # the main title
 
 tagline: My Personal Blog  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Abdullahi - My Personal Blog
+  Abdiaziz - My Personal Blog
 
 # Replace with the website url, e.g. 'https://username.github.io'
-url: 'https://0abdullahi.github.io'
+url: 'https://suldansec.github.io'
 
-author: Abdullahi                # change to your full name
+author: Abdiaziz                # change to your full name
 
 avatar: /assets/img/sample/avatar.jpeg   # support internet resources
 
 github:
-  username: 0abdullahi             # change to your github username
+  username: suldansec             # change to your github username
 
 twitter:
-  username: abdullahieissa            # change to your twitter username
+  username: Mr_chocolate16            # change to your twitter username
 
 facebook:
     username:
@@ -35,18 +35,18 @@ discordapp:
     username: 836817039984164884
     
 linkedin:
-    username: abdullahi-ahmed1            # change to your twitter username
+    username: abdiaziz-maalim            # change to your twitter username
 
 social:
-  name: Abdullahi                  # it will shows as the copyright owner in Footer
+  name: Abdiaziz                  # it will shows as the copyright owner in Footer
   email:            # change to your email address
   links:
     # The first element serves as the copyright owner's link
     -       # change to your twitter homepage
-    - https://github.com/0abdullahi       # change to your github homepage
+    - https://github.com/suldansec       # change to your github homepage
     # Uncomment below to add more social links
     - 
-    - https://www.linkedin.com/in/abdullahi-ahmed1
+    - https://www.linkedin.com/in/abdiaziz-maalim
 
 google_site_verification:  # change to your verification string
 
